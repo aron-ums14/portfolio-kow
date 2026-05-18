@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Certifications</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="skills.html">Skills</a></li>
+            <li><a href="certifications.html" class="active">Certifications</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Theme Toggle Button -->
+    <button class="theme-toggle" id="themeToggle">
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <!-- Social Sidebar -->
+    <div class="social-sidebar">
+        <a href="https://github.com/aron-ums14" target="_blank" class="social-link github" title="GitHub">
+            <i class="fab fa-github"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/aaron-umali-b42309332/" target="_blank" class="social-link linkedin" title="LinkedIn">
+            <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://web.facebook.com/aaron.vincent.54772/" target="_blank" class="social-link facebook" title="Facebook">
+            <i class="fab fa-facebook"></i>
+        </a>
+        <a href="mailto:your@email.com" class="social-link email" title="Email">
+            <i class="fas fa-envelope"></i>
+        </a>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        <section class="certifications-section">
+            <h2>My Certifications</h2>
+            
+            <div class="certification-grid">
+                <!-- Blockchain Certification -->
+                <div class="certificate-card">
+                    <img src="certifications/blockchain.jpg" alt="Blockchain Certification">
+                    <div class="cert-content">
+                        <h3>Blockchain Fundamentals</h3>
+                        <p>Comprehensive course covering blockchain technology, cryptocurrency, and smart contracts.</p>
+                        <a href="#" class="cert-link">
+                            View Certificate <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- IC3 Certification -->
+                <div class="certificate-card">
+                    <img src="certifications/ic3.png" alt="IC3 Certification">
+                    <div class="cert-content">
+                        <h3>IC3 Blockchain Certification</h3>
+                        <p>Industry-recognized certification from IC3 (Initium Cryptocurrency Consensus Initiative).</p>
+                        <a href="#" class="cert-link">
+                            View Certificate <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- JavaScript for Theme Toggle -->
+    <script>
+        const themeToggle = document.getElementById('themeToggle');
+        const body = document.body;
+
+        // Load saved theme preference
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            body.classList.add('dark-mode');
+            themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+        }
+
+        // Toggle theme
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            
+            if (body.classList.contains('dark-mode')) {
+                localStorage.setItem('theme', 'dark');
+                themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+            } else {
+                localStorage.setItem('theme', 'light');
+                themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+            }
+        });
+    </script>
+</body>
+
+</html>

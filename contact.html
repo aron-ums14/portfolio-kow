@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Aaron Umali</title>
+    <meta name="description" content="Get in touch with Aaron Umali - Full Stack Developer, IT Specialist, and Data Analyst.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- NAVIGATION -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="skills.html">Skills</a></li>
+            <li><a href="certifications.html">Certifications</a></li>
+            <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- THEME TOGGLE BUTTON -->
+    <button class="theme-toggle" id="themeToggle">
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <!-- SOCIAL SIDEBAR -->
+    <div class="social-sidebar">
+        <a href="https://github.com/aron-ums14" target="_blank" class="social-link github" title="GitHub">
+            <i class="fab fa-github"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/aaron-umali-b42309332/" target="_blank" class="social-link linkedin" title="LinkedIn">
+            <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://web.facebook.com/aaron.vincent.54772/" target="_blank" class="social-link facebook" title="Facebook">
+            <i class="fab fa-facebook"></i>
+        </a>
+        <a href="mailto:your@email.com" class="social-link email" title="Email">
+            <i class="fas fa-envelope"></i>
+        </a>
+    </div>
+
+    <main>
+        <!-- HERO SECTION -->
+        <section class="contact-hero">
+            <h1>Get In Touch</h1>
+            <p>Have a project in mind? Let's talk! I'm always open to discussing new ideas and opportunities.</p>
+        </section>
+
+        <!-- CONTACT METHODS -->
+        <section class="contact-methods">
+            <div class="contact-grid">
+                <!-- Email -->
+                <div class="contact-method-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>Email</h3>
+                    <p>Get in touch via email for project inquiries and collaborations.</p>
+                    <a href="mailto:your@email.com" class="contact-link">
+                        <i class="fas fa-arrow-right"></i> Send Email
+                    </a>
+                </div>
+
+                <!-- Phone -->
+                <div class="contact-method-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <h3>Phone</h3>
+                    <p>Call or text me for urgent matters or quick discussions.</p>
+                    <a href="tel:+63XXXXXXXXXX" class="contact-link">
+                        <i class="fas fa-arrow-right"></i> Call Now
+                    </a>
+                </div>
+
+                <!-- LinkedIn -->
+                <div class="contact-method-card">
+                    <div class="contact-icon">
+                        <i class="fab fa-linkedin"></i>
+                    </div>
+                    <h3>LinkedIn</h3>
+                    <p>Connect with me on LinkedIn for professional networking.</p>
+                    <a href="https://www.linkedin.com/in/aaron-umali-b42309332/" target="_blank" class="contact-link">
+                        <i class="fas fa-arrow-right"></i> Connect
+                    </a>
+                </div>
+
+                <!-- GitHub -->
+                <div class="contact-method-card">
+                    <div class="contact-icon">
+                        <i class="fab fa-github"></i>
+                    </div>
+                    <h3>GitHub</h3>
+                    <p>Check out my projects and contributions on GitHub.</p>
+                    <a href="https://github.com/aron-ums14" target="_blank" class="contact-link">
+                        <i class="fas fa-arrow-right"></i> Visit Profile
+                    </a>
+                </div>
+
+                <!-- Facebook -->
+                <div class="contact-method-card">
+                    <div class="contact-icon">
+                        <i class="fab fa-facebook"></i>
+                    </div>
+                    <h3>Facebook</h3>
+                    <p>Message me on Facebook for casual inquiries.</p>
+                    <a href="https://web.facebook.com/aaron.vincent.54772/" target="_blank" class="contact-link">
+                        <i class="fas fa-arrow-right"></i> Message
+                    </a>
+                </div>
+            </div>
+        </section>
+        <!-- CTA SECTION -->
+        <section class="cta-section">
+            <div class="cta-content">
+                <h2>Ready to Work Together?</h2>
+                <p>Choose any method above to get started. I'm looking forward to hearing from you!</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 Aaron Umali. All Rights Reserved. | San Juan, Batangas | Full Stack Developer</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        const themeToggle = document.getElementById('themeToggle');
+        const body = document.body;
+
+        // Load saved theme preference
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            body.classList.add('dark-mode');
+            themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+        }
+
+        // Toggle theme
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            
+            if (body.classList.contains('dark-mode')) {
+                localStorage.setItem('theme', 'dark');
+                themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+            } else {
+                localStorage.setItem('theme', 'light');
+                themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+            }
+        });
+
+        // Form handling with client-side validation feedback
+        const form = document.getElementById('forminitForm');
+        const formStatus = document.getElementById('formStatus');
+
+        form.addEventListener('submit', function(e) {
+            // Client-side validation before submission
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const subject = document.getElementById('subject').value.trim();
+            const message = document.getElementById('message').value.trim();
+
+            if (!name || !email || !subject || !message) {
+                e.preventDefault();
+                showStatus('❌ Please fill in all required fields.', 'error');
+                return;
+            }
+
+            if (message.length < 10) {
+                e.preventDefault();
+                showStatus('❌ Message must be at least 10 characters long.', 'error');
+                return;
+            }
+
+            // Show loading state
+            const submitBtn = form.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+            submitBtn.disabled = true;
+
+            // Reset after submission
+            setTimeout(() => {
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+            }, 2000);
+        });
+
+        function showStatus(message, type) {
+            formStatus.className = `form-status show ${type}`;
+            formStatus.innerHTML = message;
+            
+            // Auto-hide after 5 seconds
+            setTimeout(() => {
+                formStatus.classList.remove('show');
+            }, 5000);
+        }
+    </script>
+</body>
+
+</html>

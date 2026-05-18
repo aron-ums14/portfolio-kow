@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me - Aaron Umali</title>
+    <meta name="description" content="Learn about Aaron Umali - A 2nd year BSIT-MWA student at NU Lipa, passionate about web development and programming.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+     <!-- =========================
+           ABOUT PAGE SPECIFIC STYLES
+        =========================
+-->
+    <style>
+        /* =========================
+           ABOUT PAGE SPECIFIC STYLES
+        ========================= */
+
+        .about-hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+            border-radius: 25px;
+            margin-bottom: 60px;
+            animation: slideInDown 0.8s ease-out;
+        }
+
+        .about-hero h1 {
+            color: white;
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+            animation: fadeInUp 0.8s ease-out 0.2s backwards;
+        }
+
+        .about-hero p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+            animation: fadeInUp 0.8s ease-out 0.4s backwards;
+        }
+
+        /* =========================
+           PROFILE SECTION
+        ========================= */
+
+        .about-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+            margin-bottom: 80px;
+            padding: 60px 0;
+        }
+
+        .profile-image-wrapper {
+            position: relative;
+            animation: fadeInLeft 0.8s ease-out;
+        }
+
+        .profile-image-wrapper img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease;
+        }
+
+        .profile-image-wrapper img:hover {
+            transform: scale(1.02);
+        }
+
+        .profile-image-frame {
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            padding: 8px;
+        }
+
+        .profile-image-frame::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            animation: shimmer 3s infinite;
+            z-index: 1;
+            border-radius: 20px;
+        }
+
+        @keyframes shimmer {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        .bio-content {
+            animation: fadeInRight 0.8s ease-out;
+        }
+
+        .bio-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        body.dark-mode .bio-content h2 {
+            color: #fff;
+        }
+
+        .bio-content p {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            color: #555;
+            text-align: justify;
+        }
+
+        body.dark-mode .bio-content p {
+            color: #bbb;
+        }
+
+        .bio-highlight {
+            background: linear-gradient(120deg, #667eea, #764ba2);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            margin-top: 25px;
+            border-left: 5px solid #00d4ff;
+            animation: bounceIn 0.8s ease-out 0.6s backwards;
+        }
+
+        .bio-highlight strong {
+            font-size: 1.2rem;
+        }
+
+        /* =========================
+           EDUCATION TIMELINE
+        ========================= */
+
+        .education-section {
+            padding: 80px 0;
+        }
+
+        .education-section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 60px;
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .education-section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, #007bff, #00d4ff);
+            border-radius: 2px;
+        }
+
+        .timeline {
+            position: relative;
+            padding: 20px 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(180deg, #007bff, #00d4ff);
+            border-radius: 2px;
+        }
+
+        .timeline-item {
+            margin-bottom: 50px;
+            animation: fadeInUp 0.8s ease-out backwards;
+        }
+
+        .timeline-item:nth-child(1) { animation-delay: 0.2s; }
+        .timeline-item:nth-child(2) { animation-delay: 0.4s; }
+        .timeline-item:nth-child(3) { animation-delay: 0.6s; }
+
+        .timeline-item:nth-child(odd) {
+            margin-left: 0;
+            margin-right: auto;
+            padding-right: 55%;
+            text-align: right;
+        }
+
+        .timeline-item:nth-child(even) {
+            margin-left: auto;
+            margin-right: 0;
+            padding-left: 55%;
+            text-align: left;
+        }
+
+        .timeline-content {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            border-left: 5px solid #007bff;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        body.dark-mode .timeline-content {
+            background: #1f1f1f;
+        }
+
+        .timeline-content:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content {
+            border-left: none;
+            border-right: 5px solid #764ba2;
+        }
+
+        .timeline-content::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border: 4px solid white;
+            border-radius: 50%;
+            top: 50%;
+            transform: translateY(-50%);
+            left: -51px;
+            box-shadow: 0 0 0 5px #f5f7fb;
+        }
+
+        body.dark-mode .timeline-content::after {
+            box-shadow: 0 0 0 5px #121212;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content::after {
+            left: auto;
+            right: -51px;
+            box-shadow: 0 0 0 5px #f5f7fb;
+        }
+
+        body.dark-mode .timeline-item:nth-child(even) .timeline-content::after {
+            box-shadow: 0 0 0 5px #121212;
+        }
+
+        .timeline-year {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #007bff;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-year::before {
+            content: '📚';
+            font-size: 1.5rem;
+        }
+
+        .timeline-item:nth-child(2) .timeline-year::before {
+            content: '🎓';
+            font-size: 1.5rem;
+        }
+
+        .timeline-item:nth-child(3) .timeline-year::before {
+            content: '💼';
+            font-size: 1.5rem;
+        }
+
+        .timeline-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        body.dark-mode .timeline-title {
+            color: #fff;
+        }
+
+        .timeline-subtitle {
+            font-size: 0.95rem;
+            color: #666;
+            margin-bottom: 12px;
+            font-weight: 500;
+        }
+
+        body.dark-mode .timeline-subtitle {
+            color: #aaa;
+        }
+
+        .timeline-description {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        body.dark-mode .timeline-description {
+            color: #bbb;
+        }
+
+        /* =========================
+           LOCATION SECTION
+        ========================= */
+
+        .location-section {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+            padding: 80px 40px;
+            border-radius: 25px;
+            margin: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        body.dark-mode .location-section {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.2), rgba(118, 75, 162, 0.2));
+        }
+
+        .location-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(102, 126, 234, 0.2), transparent);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .location-content {
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .location-icon-box {
+            text-align: center;
+            animation: zoomIn 0.8s ease-out;
+        }
+
+        .location-icon {
+            width: 150px;
+            height: 150px;
+            margin: 0 auto 30px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .location-icon:hover {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .location-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        body.dark-mode .location-info h3 {
+            color: #fff;
+        }
+
+        .location-info p {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 15px;
+            color: #555;
+        }
+
+        body.dark-mode .location-info p {
+            color: #bbb;
+        }
+
+        .location-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 30px;
+            margin-top: 20px;
+            font-weight: 600;
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        /* =========================
+           SKILLS PREVIEW
+        ========================= */
+
+        .skills-preview {
+            padding: 80px 0;
+            background: white;
+            margin: 0 -20px;
+            padding: 80px 20px;
+            margin-bottom: 80px;
+        }
+
+        body.dark-mode .skills-preview {
+            background: #1f1f1f;
+        }
+
+        .skills-preview h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .skills-preview h2::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, #007bff, #00d4ff);
+            border-radius: 2px;
+        }
+
+        .skills-cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 25px;
+        }
+
+        .skill-badge {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            animation: fadeInUp 0.8s ease-out backwards;
+        }
+
+        body.dark-mode .skill-badge {
+            background: #2a2a2a;
+        }
+
+        .skill-badge:nth-child(1) { animation-delay: 0.1s; }
+        .skill-badge:nth-child(2) { animation-delay: 0.2s; }
+        .skill-badge:nth-child(3) { animation-delay: 0.3s; }
+        .skill-badge:nth-child(4) { animation-delay: 0.4s; }
+        .skill-badge:nth-child(5) { animation-delay: 0.5s; }
+        .skill-badge:nth-child(6) { animation-delay: 0.6s; }
+
+        .skill-badge:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .skill-badge i {
+            font-size: 2.5rem;
+            color: #007bff;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .skill-badge span {
+            font-weight: 600;
+            color: #333;
+            font-size: 0.95rem;
+        }
+
+        body.dark-mode .skill-badge span {
+            color: #f1f1f1;
+        }
+
+        /* =========================
+           ANIMATIONS
+        ========================= */
+
+        @keyframes slideInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes bounceIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes zoomIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* =========================
+           RESPONSIVE DESIGN
+        ========================= */
+
+        @media (max-width: 1024px) {
+            .about-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .location-content {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline::before {
+                left: 0;
+                transform: translateX(-50%);
+            }
+
+            .timeline-item:nth-child(odd),
+            .timeline-item:nth-child(even) {
+                margin-left: 0;
+                margin-right: 0;
+                padding-left: 80px;
+                padding-right: 0;
+                text-align: left;
+            }
+
+            .timeline-item:nth-child(odd) .timeline-content {
+                border-left: 5px solid #007bff;
+                border-right: none;
+            }
+
+            .timeline-item:nth-child(even) .timeline-content {
+                border-left: 5px solid #007bff;
+                border-right: none;
+            }
+
+            .timeline-content::after {
+                left: -51px;
+                right: auto;
+            }
+
+            .timeline-item:nth-child(even) .timeline-content::after {
+                left: -51px;
+                right: auto;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .about-hero {
+                padding: 50px 20px;
+            }
+
+            .about-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .bio-content h2 {
+                font-size: 1.8rem;
+            }
+
+            .education-section h2 {
+                font-size: 2rem;
+            }
+
+            .location-section {
+                padding: 50px 20px;
+            }
+
+            .skills-cards-grid {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            }
+        }
+
+        @media (max-width: 480px) {
+            .about-hero h1 {
+                font-size: 2rem;
+            }
+
+            .about-hero p {
+                font-size: 1rem;
+            }
+
+            .bio-content h2 {
+                font-size: 1.5rem;
+            }
+
+            .location-icon {
+                width: 120px;
+                height: 120px;
+                font-size: 3rem;
+            }
+
+            .skills-cards-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+
+    <!---
+    ====================
+    END OF THE CSS TAGS
+    ====================
+    -->>
+</head>
+
+<body>
+    <!-- NAVIGATION -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html" class="active">About</a></li>
+            <li><a href="skills.html">Skills</a></li>
+            <li><a href="certifications.html">Certifications</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- THEME TOGGLE BUTTON -->
+    <button class="theme-toggle" id="themeToggle">
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <!-- SOCIAL SIDEBAR -->
+    <div class="social-sidebar">
+        <a href="https://github.com/aron-ums14" target="_blank" class="social-link github" title="GitHub">
+            <i class="fab fa-github"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/aaron-umali-b42309332/" target="_blank" class="social-link linkedin" title="LinkedIn">
+            <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://web.facebook.com/aaron.vincent.54772/" target="_blank" class="social-link facebook" title="Facebook">
+            <i class="fab fa-facebook"></i>
+        </a>
+        <a href="mailto:your@email.com" class="social-link email" title="Email">
+            <i class="fas fa-envelope"></i>
+        </a>
+    </div>
+
+    <main>
+        <!-- HERO SECTION -->
+        <section class="about-hero">
+            <h1>About Me</h1>
+            <p>Passionate developer and IT enthusiast on a journey to master web development, IT infrastructure, and data analysis</p>
+        </section>
+
+        <!-- PROFILE SECTION -->
+        <section>
+            <div class="about-container">
+                <div class="profile-image-wrapper">
+                    <div class="profile-image-frame">
+                        <!-- Replace src with your image path -->
+                        <img src="profilepic.jpg" alt="Aaron Umali Profile Picture">
+                    </div>
+                </div>
+
+                <div class="bio-content">
+                    <h2>Aaron Vincent V. Umali</h2>
+                    <p>
+                        I'm a passionate 2nd year college student pursuing a Bachelor of Science in Information Technology 
+                        specializing in Mobile Web Applications (BSIT-MWA) at <strong>NU Lipa</strong>. With strong foundations 
+                        in academic excellence and practical coding experience, I'm dedicated to becoming a proficient full-stack developer.
+                    </p>
+                    <p>
+                        My journey in technology has been driven by curiosity and a commitment to continuous learning. 
+                        I'm constantly exploring new technologies, best practices, and innovative solutions to real-world problems. 
+                        Whether it's building responsive web applications, troubleshooting IT infrastructure, or analyzing data, 
+                        I approach every challenge with enthusiasm and attention to detail.
+                    </p>
+                    <p>
+                        I believe in the power of technology to transform ideas into reality and am excited about the opportunities 
+                        ahead in my career. My goal is to contribute meaningfully to projects that make a positive impact while 
+                        continuously expanding my skill set and knowledge.
+                    </p>
+
+                    <div class="bio-highlight">
+                        <p>
+                            <strong>Currently Learning:</strong> Advanced web frameworks, cloud technologies, IT systems management, 
+                            and data analytics. I'm committed to gaining hands-on experience and building a strong professional portfolio.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- EDUCATION TIMELINE -->
+        <section class="education-section">
+            <h2>My Educational Journey</h2>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-year">Senior High School</div>
+                        <div class="timeline-title">Strand: ABM (Accountancy, Business & Management)</div>
+                        <div class="timeline-subtitle">Joseph Marello Institute | 2022 - 2024</div>
+                        <div class="timeline-description">
+                            Completed my senior high school at Joseph Marello Institute education with a focus on business and management principles. 
+                            This foundation provided me with essential knowledge in organization, financial literacy, and business operations 
+                            which complements my technical skills today.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-year">Higher Education</div>
+                        <div class="timeline-title">BSIT-MWA (Mobile Web Applications)</div>
+                        <div class="timeline-subtitle">NU Lipa | 2024 - Present (Ongoing - 2nd Year)</div>
+                        <div class="timeline-description">
+                            Currently pursuing my Bachelor's degree in Information Technology with specialization in Mobile Web Applications. 
+                            Throughout my coursework, I've gained practical experience in full-stack development, database management, 
+                            web design, and software engineering principles. I'm actively engaged in learning modern frameworks and technologies 
+                            while building real-world projects.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-year">Career Path</div>
+                        <div class="timeline-title">Continuous Growth & Learning</div>
+                        <div class="timeline-subtitle">2024 - Future</div>
+                        <div class="timeline-description">
+                            My educational journey is just the beginning. With 2 more years of learning ahead, I'm committed to mastering 
+                            full-stack development, IT infrastructure, and data analytics. I'm continuously working on personal projects, 
+                            pursuing certifications, and gaining practical experience to prepare for a successful career in technology.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- LOCATION SECTION -->
+        <section class="location-section">
+            <div class="location-content">
+                <div class="location-icon-box">
+                    <div class="location-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                </div>
+
+                <div class="location-info">
+                    <h3>Where I'm Based</h3>
+                    <p>
+                        <strong>📍 City/Municipality:</strong> San Juan, Batangas
+                    </p>
+                    <p>
+                        I'm currently living in San Juan, Batangas, a vibrant community in the heart of Calabarzon region. 
+                        This location provides me with access to great networking opportunities and a growing tech community.
+                    </p>
+                    <p>
+                        <strong>🎓 Institution:</strong> NU Lipa (NU Batangas - Lipa Campus)
+                    </p>
+                    <p>
+                        I'm studying at the NU Lipa branch, a prestigious institution known for its academic excellence and 
+                        focus on technology and innovation. The university provides state-of-the-art facilities and experienced faculty 
+                        that support my growth as a developer and IT professional.
+                    </p>
+                    <span class="location-badge">
+                        <i class="fas fa-home"></i> San Juan, Batangas
+                    </span>
+                    <span class="location-badge" style="margin-left: 10px;">
+                        <i class="fas fa-graduation-cap"></i> NU Lipa
+                    </span>
+                </div>
+            </div>
+        </section>
+        
+        <!-- CTA SECTION -->
+        <section class="cta-section">
+            <div class="cta-content">
+                <h2>Let's Connect</h2>
+                <p style="font-size: 1.1rem; margin-bottom: 30px;">
+                    I'm always excited to discuss technology, collaborate on projects, and explore new opportunities. 
+                    Feel free to reach out and let's build something amazing together!
+                </p>
+
+                <div class="cta-buttons">
+                    <a href="skills.html" class="cta-button large">
+                        <i class="fas fa-star"></i> View My Skills
+                    </a>
+                    <a href="contact.html" class="cta-button secondary large">
+                        <i class="fas fa-paper-plane"></i> Get In Touch
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 Aaron Umali. All Rights Reserved. | Student Developer | Passionate about Technology</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        const themeToggle = document.getElementById('themeToggle');
+        const body = document.body;
+
+        // Load saved theme preference
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            body.classList.add('dark-mode');
+            themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+        }
+
+        // Toggle theme
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            
+            if (body.classList.contains('dark-mode')) {
+                localStorage.setItem('theme', 'dark');
+                themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+            } else {
+                localStorage.setItem('theme', 'light');
+                themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+            }
+        });
+
+        // Set active navigation link
+        document.querySelectorAll('nav a').forEach(link => {
+            if (link.href === window.location.href) {
+                link.classList.add('active');
+            }
+        });
+    </script>
+</body>
+
+</html>

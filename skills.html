@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills - Aaron Umali Portfolio</title>
+    <meta name="description" content="Full Stack Developer Skills - HTML, Bootstrap, CSS, JavaScript, Tailwind, C++, Java, Python, SQL, Git, GitHub, VSCode and more.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- SOCIAL ICONS -->
+    <div class="social-sidebar">
+        <a href="https://github.com/aron-ums14" target="_blank" class="social-link github" title="GitHub">
+            <i class="fab fa-github"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/aaron-umali-b42309332/" target="_blank" class="social-link linkedin" title="LinkedIn">
+            <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://web.facebook.com/aaron.vincent.54772/" target="_blank" class="social-link facebook" title="Facebook">
+            <i class="fab fa-facebook"></i>
+        </a>
+        <a href="mailto:your@email.com" class="social-link email" title="Email">
+            <i class="fas fa-envelope"></i>
+        </a>
+    </div>
+
+    <!-- THEME TOGGLE BUTTON -->
+    <button class="theme-toggle" id="themeToggle">
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <!-- NAVIGATION -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="skills.html" class="active">Skills</a></li>
+            <li><a href="certifications.html">Certifications</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <!-- HERO SECTION -->
+        <section class="hero skills-hero">
+            <h1>My Technical Skills</h1>
+           <!-- <p></p> <div class="skills-stats">
+                <span><i class="fas fa-code"></i> 30+ Technologies</span>
+                <span><i class="fas fa-chart-line"></i> 98% Proficiency</span>
+                <span><i class="fas fa-rocket"></i> Production Ready</span>
+            </div>
+        </section>
+    -->
+        <!-- FRONTEND SKILLS -->
+        <section id="frontend" class="skills-category">
+            <h2><i class="fas fa-laptop-code"></i> Frontend Development</h2>
+            <p class="category-desc">Building responsive, interactive user interfaces with modern frameworks and technologies.</p>
+            
+            <div class="skills-grid">
+                <div class="skill-item" data-skill="95">
+                    <i class="fab fa-html5"></i>
+                    <span>HTML5</span>
+                    <div class="skill-bar">
+                        <div class="skill-progress"></div>
+                    </div>
+                </div>
+                
+                <div class="skill-item" data-skill="94">
+                    <i class="fab fa-css3-alt"></i>
+                    <span>CSS3</span>
+                    <div class="skill-bar">
+                        <div class="skill-progress"></div>
+                    </div>
+                </div>
+                
+                <div class="skill-item" data-skill="96">
+                    <i class="fab fa-js-square"></i>
+                    <span>JavaScript</span>
+                    <div class="skill-bar">
+                        <div class="skill-progress"></div>
+                    </div>
+                </div>
+                
+                <div class="skill-item" data-skill="93">
+                    <i class="fab fa-bootstrap"></i>
+                    <span>Bootstrap</span>
+                    <div class="skill-bar">
+                        <div class="skill-progress"></div>
+                    </div>
+                </div>
+
+                <div class="skill-item" data-skill="92">
+                    <i class="fas fa-wind"></i>
+                    <span>Tailwind CSS</span>
+                    <div class="skill-bar">
+                        <div class="skill-progress"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- BACKEND SKILLS -->
+        <section id="backend" class="skills-category alt-bg">
+            <h2><i class="fas fa-server"></i> Backend Development</h2>
+            <p class="category-desc">Robust server-side programming with focus on efficiency and problem-solving.</p>
+            
+            <div class="skills-grid">
+                <div class="skill-item" data-skill="91">
+                    <i class="fab fa-java"></i>
+                    <span>Java</span>
+                    <div class="skill-bar">
+                        <div class="skill-progress"></div>
+                    </div>
+                </div>
+                
+                <div class="skill-item" data-skill="93">
+                    <i class="fab fa-python"></i>
+                    <span>Python</span>
+                    <div class="skill-bar">
+                        <div class="skill-progress"></div>
+                    </div>
+                </div>
+                
+                <div class="skill-item" data-skill="90">
+                    <i class="fas fa-plus"></i>
+                    <span>C++</span>
+                    <div class="skill-bar">
+                        <div class="skill-progress"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- DATABASE SKILLS -->
+        <section id="database" class="skills-category">
+            <h2><i class="fas fa-database"></i> Database</h2>
+            <p class="category-desc">Data management and SQL expertise for efficient data operations.</p>
+            
+            <div class="skills-grid">
+                <div class="skill-item" data-skill="94">
+                    <i class="fas fa-table"></i>
+                    <span>SQL</span>
+                    <div class="skill-bar">
+                        <div class="skill-progress"></div>
+                    </div>
+                </div>
+                <div class="skills-grid">
+                <div class="skill-item" data-skill="94">
+                    <i class="fa-solid fa-file-excel"></i>
+                    <span>Excel</span>
+                    <div class="skill-bar">
+                        <div class="skill-progress"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TOOLS & SOFTWARE -->
+        <section id="tools" class="skills-category alt-bg">
+            <h2><i class="fas fa-tools"></i> Tools & Software</h2>
+            <p class="category-desc">Development tools and software I use daily for efficient workflow.</p>
+            
+            <div class="skills-grid">
+                <div class="skill-item" data-skill="96">
+                    <i class="fab fa-git-alt"></i>
+                    <span>Git</span>
+                    <div class="skill-bar">
+                        <div class="skill-progress"></div>
+                    </div>
+                </div>
+                
+                <div class="skill-item" data-skill="97">
+                    <i class="fab fa-github"></i>
+                    <span>GitHub</span>
+                    <div class="skill-bar">
+                        <div class="skill-progress"></div>
+                    </div>
+                </div>
+                
+                <div class="skill-item" data-skill="95">
+                    <i class="fas fa-code"></i>
+                    <span>VSCode</span>
+                    <div class="skill-bar">
+                        <div class="skill-progress"></div>
+                    </div>
+                </div>
+                
+                <div class="skill-item" data-skill="93">
+                    <i class="fab fa-figma"></i>
+                    <span>Figma</span>
+                    <div class="skill-bar">
+                        <div class="skill-progress"></div>
+                    </div>
+                </div>
+
+                <div class="skill-item" data-skill="92">
+                    <i class="fa-brands fa-adobe adobe-icon"></i>
+                    <span>Adobe Creative Suite</span>
+                    <div class="skill-bar">
+                        <div class="skill-progress"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- NETWORKING SKILLS -->
+        <section id="networking" class="skills-category">
+            <h2><i class="fas fa-network-wired"></i> Networking</h2>
+            <p class="category-desc">Network administration and infrastructure knowledge.</p>
+            
+            <div class="skills-grid">
+                <div class="skill-item" data-skill="88">
+                    <i class="fas fa-globe"></i>
+                    <span>Cisco Networking</span>
+                    <div class="skill-bar">
+                        <div class="skill-progress"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SPECIALIZED ROLES -->
+        <section id="specialized" class="skills-category alt-bg">
+            <h2><i class="fas fa-briefcase"></i> Specialized Roles</h2>
+            <p class="category-desc">Additional professional expertise and capabilities.</p>
+            
+            <div class="skills-grid">
+                <div class="skill-item" data-skill="92">
+                    <i class="fas fa-tools"></i>
+                    <span>IT Technician</span>
+                    <div class="skill-bar">
+                        <div class="skill-progress"></div>
+                    </div>
+                    <p class="role-desc">Troubleshooting hardware and software issues, system maintenance and support.</p>
+                </div>
+                
+                <div class="skill-item" data-skill="93">
+                    <i class="fas fa-chart-bar"></i>
+                    <span>Data Analyst</span>
+                    <div class="skill-bar">
+                        <div class="skill-progress"></div>
+                    </div>
+                    <p class="role-desc">Data analysis using SQL, Excel, and Python for insights and reporting.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SKILLS SUMMARY -->
+        <section class="skills-summary">
+            <h2>Summary</h2>
+            <div class="summary-content">
+                <div class="summary-stats">
+                    <div class="stat-large">
+                        <span class="stat-number">2500+</span>
+                        <span>Hours Coded</span>
+                    </div>
+                    <div class="stat-large">
+                        <span class="stat-number">50+</span>
+                        <span>Projects Delivered</span>
+                    </div>
+                    <div class="stat-large">
+                        <span class="stat-number">99.9%</span>
+                        <span>Uptime Achieved</span>
+                    </div>
+                </div>
+                <div class="summary-text">
+                    <p><strong>Full-Stack Expertise:</strong> From pixel-perfect UIs to optimized backend systems, I deliver complete solutions.</p>
+                    <p><strong>Performance Focused:</strong> Core Web Vitals optimization, Lighthouse scores 95+, and lightning-fast applications.</p>
+                    <p><strong>Multi-Role Capability:</strong> Developer, IT Technician, and Data Analyst with comprehensive technical knowledge.</p>
+                    <a href="contact.html" class="cta-button large">Hire Me Now</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- THEME TOGGLE SCRIPT -->
+    <script>
+        const themeToggle = document.getElementById('themeToggle');
+        const body = document.body;
+
+        // Load saved theme preference
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            body.classList.add('dark-mode');
+            themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+        }
+
+        // Toggle theme
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            
+            if (body.classList.contains('dark-mode')) {
+                localStorage.setItem('theme', 'dark');
+                themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+            } else {
+                localStorage.setItem('theme', 'light');
+                themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+            }
+        });
+
+        // Animate skill bars on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const skillItem = entry.target;
+                    const skillValue = skillItem.getAttribute('data-skill');
+                    const progressBar = skillItem.querySelector('.skill-progress');
+                    
+                    setTimeout(() => {
+                        progressBar.style.width = skillValue + '%';
+                    }, 100);
+                    
+                    observer.unobserve(skillItem);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.skill-item').forEach(item => {
+            observer.observe(item);
+        });
+    </script>
+</body>
+
+</html>
